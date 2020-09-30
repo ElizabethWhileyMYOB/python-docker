@@ -1,14 +1,14 @@
-# Use the Python3.7.2 image
-FROM python:3.7.2-stretch
+# Use the Python3
+FROM python:3
 
 # Set the working directory to /app
 WORKDIR /app
 
-# Copy the current directory contents into the container at /app 
+# # Copy the current directory contents into the container at /app 
 ADD . /app
 
-# Install the dependencies
+# # Install the dependencies
 RUN pip install -r requirements.txt
 
-# run the command to start uWSGI
+# # run the command to start uWSGI
 CMD ["uwsgi", "app.ini"]
